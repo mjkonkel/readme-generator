@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -17,7 +18,7 @@ const questions = [{
     type: 'list',
     message: 'What type of license are you using?',
     name: 'license',
-    choices: ['MIT', 'IBM', 'ISC'],
+    choices: ['MIT', 'IBM', 'ISC', 'none'],
 },
 {
     type: 'input',
@@ -53,53 +54,19 @@ const questions = [{
 },];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) { 
+   fs.writeFileSync(fileName, data)
+}
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() { 
+    inquirer
+    .prompt(questions)
+    .then((data) => {
+        writeToFile('./readme/README.md', generateMarkdown(data))
+       
+    })
+}
 
 // Function call to initialize app
 init();
-
-
-
-
-const createREADME = ({title, desc, license, username, email, install, test, using, contributing}) =>
-`
-# ${title}
-## Description
-${desc}
-## Table of Contents
-- [License](#License)
-- [Installation](#Installation)
-- [Testing](#Testing)
-- [Usage](#Usage)
-- [Contributions](#Contributions)
-- [Contact](#Contact)
-## License 
-[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/${license})  
-This project is licensed under the ${license} license.
-## Installation
-To install necessary dependencies, run the following command:  
-> <span style="font-family:Serif; font-size:1.2em;">${install}</span>
-## Testing
-To run tests, run the following command:  
-> <span style="font-family:Serif; font-size:1.2em;">${test}</span>
-## Usage
-${using}
-## Contributions 
-${contributing}
-## Contact
-If you have any questions, I can be reached by email at [${email}](${email}). My GitHub username is: [${username}](https://github.com/${username}).
-`
-
-inquirer
-    .prompt(questions)
-    .then((data) => {
-        const readme = createREADME(data);
-        fs.writeFile('.README.md', readme, (err) =>
-            err ? console.log(err) : console.log('Success! Generating README')
-        )
-    })
-
-
