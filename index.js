@@ -64,7 +64,6 @@ function init() {
     .prompt(questions)
     .then((data) => {
         writeToFile('./readme/README.md', generateMarkdown(data))
-       
     })
 }
 
