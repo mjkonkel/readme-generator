@@ -1,24 +1,16 @@
-# asdf
+# README.md Generator
   
   ## Description
-  asdf
-  ## Table of Contents
-  
-  - [Installation](#Installation)
-  - [Testing](#Testing)
-  - [Usage](#Usage)
-  - [Contributions](#Contributions)
-  - [Contact](#Contact)
+  This repo contains code for Challenge 9 of the Bootcamp. This week our assignment was to create a CLI app to generate a README file that can be used for future projects. This app uses inquirer the ask the user what they would like to include in their README. It also uses fs to create the README template. The README is generated and added to the readme folder of the repo. 
   
   ## Installation
-  To install necessary dependencies, run the following command:  
-  <span style="font-family:Serif; font-size:1.2em;">npm i</span>
-  ## Testing
-  To run tests, run the following command:  
-  <span style="font-family:Serif; font-size:1.2em;">npm test</span>
+  This project uses inquirer. Inquirer was installed by running `npm i`
+  
   ## Usage
-  asdf
-  ## Contributions 
-  asdf
-  ## Contact
-  If you have any questions, I can be reached by email at [asdf](asdf). My GitHub username is: [asdf](https://github.com/asdf).
+  >To use the README generator, enter `node index.js` into the Command Line.  
+  ![node index.js](./images/node.jpg)  
+  
+  >This will display the prompts for the user to create their README.  
+  ![questions](./images/questions.jpg)
+  ## License
+  MIT License. Please refer to the license in the repo.

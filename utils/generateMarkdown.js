@@ -51,7 +51,7 @@ function generateMarkdown(data) {
   ## Contributions 
   ${data.contributing}
   ## Contact
-  If you have any questions, I can be reached by email at [${data.email}](${data.email}). My GitHub username is: [${data.username}](https://github.com/${data.username}).
+  If you have any questions, I can be reached by email at ${data.email}. My GitHub username is: [${data.username}](https://github.com/${data.username}).
 `;
 }
 
