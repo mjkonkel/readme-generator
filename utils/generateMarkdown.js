@@ -42,10 +42,10 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data.license)}
   ## Installation
   To install necessary dependencies, run the following command:  
-  <span style="font-family:Serif; font-size:1.2em;">${data.install}</span>
+  ${data.install}
   ## Testing
   To run tests, run the following command:  
-  <span style="font-family:Serif; font-size:1.2em;">${data.test}</span>
+  ${data.test}
   ## Usage
   ${data.using}
   ## Contributions 
